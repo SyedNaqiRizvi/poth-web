@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import { useState } from 'react';
 import Image from 'next/image'
@@ -20,7 +21,8 @@ export default function SubmitPoem() {
   const [error, setError] = useState<string|null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
+  
+  const handleChange = (e: any) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -28,7 +30,7 @@ export default function SubmitPoem() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (!formData.terms) {
       setError('You must agree to the terms and conditions.');
@@ -43,7 +45,7 @@ export default function SubmitPoem() {
       if (!res.ok) throw new Error('Failed to submit');
       setSubmitted(true);
       setError(null);
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     }
   };

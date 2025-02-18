@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { createClient } from "next-sanity";
 
-export const client = createClient({
+const client = createClient({
   projectId: "ku9oz1vn",
   dataset:  "production",
    apiVersion: "2025-02-18",
