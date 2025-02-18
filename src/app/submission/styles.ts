@@ -85,6 +85,12 @@ export const FieldContainer = styled.div`
         height: 24px;
         border-radius: 5px;
         border-width: 1px;
+        padding: 6px;
+    }
+
+    input::-webkit-input-placeholder {
+     color: black;
+     opacity: 0.1; 
     }
 
     textarea {
@@ -92,5 +98,11 @@ export const FieldContainer = styled.div`
         height: 450px;
         border-radius: 5px;
         border-width: 1px;
+        padding: 6px;
+    }
+
+    textarea::-webkit-input-placeholder {
+     color: black;
+     opacity: 0.1; 
     }
 `;

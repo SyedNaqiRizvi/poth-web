@@ -16,6 +16,7 @@ export default function SubmitPoem() {
     email: '',
     instagram: '',
     poem: '',
+    location: '',
     terms: false,
   });
   const [error, setError] = useState<string|null>(null);
@@ -106,6 +107,7 @@ export default function SubmitPoem() {
             name="name"
             value={formData.name}
             onChange={handleChange}
+            placeholder='William Blake'
             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </FieldContainer>
@@ -121,13 +123,14 @@ export default function SubmitPoem() {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder='poetsofthehousehold@gmail.com'
             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </FieldContainer>
 
         <FieldContainer>
           <label htmlFor="instagram" className="block text-gray-700 mb-1">
-            Instagram (optional)
+            Instagram <i>(optional)</i>
           </label>
           <input
             type="text"
@@ -135,6 +138,22 @@ export default function SubmitPoem() {
             name="instagram"
             value={formData.instagram}
             onChange={handleChange}
+            placeholder='@poetsofthehousehold'
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </FieldContainer>
+
+        <FieldContainer>
+          <label htmlFor="location" className="block text-gray-700 mb-1">
+            Location <i>(optional)</i>
+          </label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+            placeholder='Toronto, Canada'
             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </FieldContainer>
@@ -149,6 +168,36 @@ export default function SubmitPoem() {
             name="poem"
             value={formData.poem}
             onChange={handleChange}
+            placeholder={`Tyger Tyger, burning bright, 
+In the forests of the night; 
+What immortal hand or eye, 
+Could frame thy fearful symmetry?
+
+In what distant deeps or skies. 
+Burnt the fire of thine eyes?
+On what wings dare he aspire?
+What the hand, dare seize the fire?
+
+And what shoulder, & what art,
+Could twist the sinews of thy heart?
+And when thy heart began to beat.
+What dread hand? & what dread feet?
+
+What the hammer? what the chain,
+In what furnace was thy brain?
+What the anvil? what dread grasp.
+Dare its deadly terrors clasp?
+
+When the stars threw down their spears 
+And water'd heaven with their tears:
+Did he smile his work to see?
+Did he who made the Lamb make thee?
+
+Tyger Tyger burning bright,
+In the forests of the night:
+What immortal hand or eye,
+Dare frame thy fearful symmetry?
+              `}
             className="w-full px-4 py-2 border border-gray-300 rounded h-40 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
         </FieldContainer>
@@ -168,7 +217,7 @@ export default function SubmitPoem() {
           </label>
         </div>
 
-        {error && <p className="mb-4 text-red-500">{error}</p>}
+        {error && <p className="mb-4 text-red-500" style={{color: "#cc0000"}}>{error}</p>}
 
         <button
           type="submit"

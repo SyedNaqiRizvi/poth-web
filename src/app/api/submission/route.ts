@@ -12,7 +12,7 @@ const client = createClient({
 export async function POST(req: Request) {
     const data = await req.json();
 
-    const { name, email, poem, terms } = data
+    const { name, email, poem, terms, location, instagram } = data
     // Basic validation
     if (!name || !email || !poem || terms !== true) {
       NextResponse.json({ error: 'Missing required fields or terms not accepted' }, {status: 400})
@@ -22,6 +22,8 @@ export async function POST(req: Request) {
       _type: "author",
       name: name,
       email: email,
+      instagram: instagram,
+      location: location
     }, {
       returnFirst: true
     })
