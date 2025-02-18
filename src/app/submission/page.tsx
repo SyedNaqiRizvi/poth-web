@@ -17,7 +17,7 @@ export default function SubmitPoem() {
     poem: '',
     terms: false,
   });
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string|null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
